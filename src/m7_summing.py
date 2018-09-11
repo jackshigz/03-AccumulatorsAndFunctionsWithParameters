@@ -7,7 +7,7 @@ Authors: David Mutchler, Dave Fisher, Vibha Alangar, Mark Hays, Amanda Stouder,
          their colleagues and Haoran Shi.
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
-
+import math
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_sum_cosines()
@@ -28,6 +28,11 @@ def run_test_sum_cosines():
     print('--------------------------------------------------')
     print('Testing the   sum_cosines   function:')
     print('--------------------------------------------------')
+    # Test 1:
+    expected = 0.134162972720552
+    answer = sum_cosines(3)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
 
 
 def sum_cosines(n):
@@ -40,6 +45,10 @@ def sum_cosines(n):
       If n is 3, this function returns
         cos(0) + cos(1) + cos(2) + cos(3)   which is about 0.13416.
     """
+    sum = 0
+    for k in range(n+1):
+        sum = sum + math.cos(k)
+    return sum
     # ------------------------------------------------------------------
     # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
@@ -64,6 +73,11 @@ def run_test_sum_square_roots():
     print('--------------------------------------------------')
     print('Testing the   sum_square_roots   function:')
     print('--------------------------------------------------')
+    # Test 1:
+    expected =11.85
+    answer = sum_square_roots(5)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
 
 
 def sum_square_roots(n):
@@ -79,6 +93,10 @@ def sum_square_roots(n):
          sqrt(2) + sqrt(4) + sqrt(6) + sqrt(8) + sqrt(10),
       which is about 11.854408.
     """
+    sum = 0
+    for k in range(n):
+        sum = sum + math.sqrt(2*(k+1))
+    return sum
     # ------------------------------------------------------------------
     # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
